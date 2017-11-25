@@ -8,12 +8,11 @@ public class FrstPrgrm{
 		hello("User");
 		hello("Vlad");
 
-		double len = 5;
-		System.out.println("Площадь квадрата со стороной " + len + " = " + area(len));
+		Square s = new Square(10);
+		System.out.println("Площадь квадрата со стороной " + s.len + " = " + s.area());
 
-		double a = 5;
-		double b = 18;
-		System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area(a,b));
+		Rectangle r = new Rectangle(3,6);
+		System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
 
 
 	}
@@ -24,12 +23,8 @@ public class FrstPrgrm{
 
 	}
 
-	public static double area (double l){
-		return l * l;
-	}
 
-	public static double area (double a, double b){
-		return a * b;
-	}
+
+
 
 }
