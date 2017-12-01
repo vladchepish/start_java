@@ -6,12 +6,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
+import java.util.Date;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
 public class ContactCreatorTests {
     FirefoxDriver wd;
+    Date date = new Date();  // Добавил текущую дату в милисекундах, чтобы добавлять её к передаваемым параметрам и делать их уникальными
+
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -34,7 +37,7 @@ public class ContactCreatorTests {
     @Test
     public void ContactCreatorTests() {
         initCintactCreation();
-        fillingContactForm(new ContactDate("testFirstName1", "testMiddleName1", "testLastName1", "testAddress1", "+79797979797", "test@test.test"));
+        fillingContactForm(new ContactDate("testFirstName1" + date.getTime(), "testMiddleName1" + date.getTime(), "testLastName1" + date.getTime(), "testAddress1" + date.getTime(), "+79797979797", "test@test.test"));
         submitContact();
         returnHomePage();
     }
