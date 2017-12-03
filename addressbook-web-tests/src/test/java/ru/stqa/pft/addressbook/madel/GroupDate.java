@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook;
+package ru.stqa.pft.addressbook.madel;
 
 public class GroupDate {
     private final String name;
