@@ -10,7 +10,7 @@ import java.util.Date;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
-import ru.stqa.pft.addressbook.madel.ContactDate;
+import ru.stqa.pft.addressbook.model.ContactDate;
 
 public class ContactCreatorTests {
     FirefoxDriver wd;
