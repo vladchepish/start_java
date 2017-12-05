@@ -26,8 +26,6 @@ public class ContactHelper extends HelperBase{
         type(By.name("address"),contactDate.getAddress());
         type(By.name("home"), contactDate.getPhone());
         type(By.name("email"), contactDate.geteMail());
-        click(By.name("theform"));
-        click(By.name("theform"));
     }
 
     public void initCintactCreation() {
@@ -43,5 +41,13 @@ public class ContactHelper extends HelperBase{
 
     public void closeAlert() {
         wd.switchTo().alert().accept();
+    }
+
+    public void openContactModificationTest() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    }
+
+    public void submitCintactModification() {
+        click(By.name("update"));
     }
 }
