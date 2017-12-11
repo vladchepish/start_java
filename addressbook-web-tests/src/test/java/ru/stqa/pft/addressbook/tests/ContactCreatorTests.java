@@ -12,7 +12,7 @@ public class ContactCreatorTests extends TestBase {
     @Test
     public void ContactCreatorTests(){
         app.getContactHelper().initCintactCreation();
-        app.getContactHelper().fillingContactForm(new ContactDate("testFirstName1" + date.getTime(), "testMiddleName1" + date.getTime(), "testLastName1" + date.getTime(), "testAddress1" + date.getTime(), "+79797979797", "test@test.test"));
+        app.getContactHelper().fillingContactForm(new ContactDate("testFirstName1" + date.getTime(), "testMiddleName1" + date.getTime(), "testLastName1" + date.getTime(), "testAddress1" + date.getTime(), "+79797979797", "test@test.test", "testName"), true);
         app.getContactHelper().submitContact();
         app.getContactHelper().returnHomePage();
     }
