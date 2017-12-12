@@ -61,4 +61,15 @@ public class ContactHelper extends HelperBase{
     public void submitCintactModification() {
         click(By.name("update"));
     }
+
+    public void creationContact(ContactDate contact, boolean boolDate) {
+        initCintactCreation();
+        fillingContactForm(contact, boolDate);
+        submitContact();
+        returnHomePage();
+    }
+
+    public boolean isContactExisting() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
