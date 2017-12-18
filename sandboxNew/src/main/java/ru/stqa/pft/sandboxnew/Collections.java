@@ -1,6 +1,5 @@
 package ru.stqa.pft.sandboxnew;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
