@@ -14,7 +14,7 @@ public class GroupCreatorTests extends TestBase {
     public void testGroupCreator() {
         app.getNavigationHelper().goToGroup();
         List<GroupDate> before = app.getGroupHelper().getGroupList();
-        GroupDate group = new GroupDate("testName2", null, null);
+        GroupDate group = new GroupDate("testName", null, null);
         app.getGroupHelper().createGroup(group);
         List<GroupDate> after = app.getGroupHelper().getGroupList();
         Assert.assertEquals(after.size(), before.size() + 1);
