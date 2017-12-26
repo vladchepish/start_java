@@ -1,41 +1,18 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactDate {
-    private int id;
-    private final String firstName;
-    private final String middleName;
-    private final String lastName;
-    private final String address;
-    private final String phone;
-    private final String eMail;
+    private int id = Integer.MAX_VALUE;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String address;
+    private String phone;
+    private String eMail;
     private String group;
-
-    public ContactDate(int id, String firstName, String middleName, String lastName, String address, String phone, String eMail, String group) {
-        this.id = id;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
-        this.eMail = eMail;
-        this.group = group;
-    }
-
-    public ContactDate(String firstName, String middleName, String lastName, String address, String phone, String eMail, String group) {
-        this.id = Integer.MAX_VALUE;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.address = address;
-        this.phone = phone;
-        this.eMail = eMail;
-        this.group = group;
-    }
 
     public int getId() {
         return id;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -61,12 +38,48 @@ public class ContactDate {
         return eMail;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getGroup() {
         return group;
+    }
+
+    public ContactDate withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public ContactDate withFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public ContactDate withMiddleName(String middleName) {
+        this.middleName = middleName;
+        return this;
+    }
+
+    public ContactDate withLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public ContactDate withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public ContactDate withPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public ContactDate witheMail(String eMail) {
+        this.eMail = eMail;
+        return this;
+    }
+
+    public ContactDate withGroup(String group) {
+        this.group = group;
+        return this;
     }
 
     @Override
