@@ -1,12 +1,22 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactDate;
 
 import java.util.List;
 
 public class ContactDeletionTests extends TestBase{
+
+    @BeforeMethod
+    public void ensurePreconditions() {
+        app.goTo().goToHomePage();
+        if (!app.getContactHelper().isContactExisting()) {
+            app.getContactHelper().creationContact(new ContactDate("testFirstName1", "testMiddleName1", "testLastName1", "testAddress1", "+79797979797", "test@test.test", "testName"), true);
+        }
+    }
+
 
     @Test
     public void testContactDeletion () {
