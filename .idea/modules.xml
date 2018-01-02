@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-test-new.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-test-new.iml" group="addressbook-web-tests-new" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/addressbook-web-tests-new/addressbook-web-tests-new.iml" filepath="$PROJECT_DIR$/addressbook-web-tests-new/addressbook-web-tests-new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_main.iml" group="addressbook-web-tests-new" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_test.iml" group="addressbook-web-tests-new" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" group="addressbook-web-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" group="addressbook-web-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandboxNew.iml" filepath="$PROJECT_DIR$/.idea/modules/sandboxNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandboxNew_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sandboxNew_main.iml" group="sandboxNew" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sandboxNew_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sandboxNew_test.iml" group="sandboxNew" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/satom-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/satom-web-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/satom-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/satom-web-tests_main.iml" group="satom-web-tests" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/satom-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/satom-web-tests_test.iml" group="satom-web-tests" />
     </modules>
   </component>
 </project>

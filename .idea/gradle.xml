@@ -5,10 +5,27 @@
       <GradleProjectSettings>
         <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook-web-test-new" />
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook-web-tests" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/addressbook-web-tests" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook-web-tests-new" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/addressbook-web-tests-new" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
@@ -20,6 +37,17 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/sandboxNew" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="createEmptyContentRootDirectories" value="true" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/satom-web-tests" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/satom-web-tests" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
