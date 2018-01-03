@@ -8,7 +8,6 @@ import ru.stqa.pft.addressbook.model.Groups;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.junit.MatcherAssert.*;
 
-
 public class GroupDeletionTests extends TestBase {
 
     @BeforeMethod
@@ -18,7 +17,6 @@ public class GroupDeletionTests extends TestBase {
             app.group().create(new GroupDate().withName("testName"));
         }
     }
-
 
     @Test
     public void testGroupDeletion() {
