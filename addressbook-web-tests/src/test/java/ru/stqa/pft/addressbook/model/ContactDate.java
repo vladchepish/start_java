@@ -12,6 +12,12 @@ public class ContactDate {
     private String homePhone;
     private String mobilePhone;
     private String workPhone;
+    private String allPhones;
+
+    public String getAllPhones() {
+        return allPhones;
+    }
+
 
     public String getHomePhone() {
         return homePhone;
@@ -109,6 +115,11 @@ public class ContactDate {
 
     public ContactDate withHomePhone(String homePhone){
         this.homePhone = homePhone;
+        return this;
+    }
+
+    public ContactDate withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
         return this;
     }
 
