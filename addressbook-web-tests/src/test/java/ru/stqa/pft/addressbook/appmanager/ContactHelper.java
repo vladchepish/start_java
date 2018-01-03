@@ -72,6 +72,7 @@ public class ContactHelper extends HelperBase{
         initCintactCreation();
         fillingContactForm(contact, boolDate);
         submitContact();
+        contactCache = null;
         returnHomePage();
     }
 
@@ -79,15 +80,16 @@ public class ContactHelper extends HelperBase{
         openContactModificationTestById(contact.getId());
         fillingContactForm(contact, false);
         submitCintactModification();
+        contactCache = null;
         returnHomePage();
     }
 
     public void deletion(ContactDate contact) {
         selectContactById(contact.getId());
         deleteSelectedContact();
+        contactCache = null;
         closeAlert();
     }
-
 
     public boolean isContactExisting() {
         return isElementPresent(By.name("selected[]"));
@@ -97,17 +99,23 @@ public class ContactHelper extends HelperBase{
         return  wd.findElements(By.name("selected[]")).size();
     }
 
+    private Contacts contactCache = null;
+
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if (contactCache != null){
+            return new Contacts(contactCache);
+        }
+
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
         for (WebElement element : elements){
             String userLastname = element.findElement(By.xpath(".//td[2]")).getText();
             String userName = element.findElement(By.xpath(".//td[3]")).getText();
             String allPhones = element.findElement(By.xpath(".//td[6]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            contacts.add(new ContactDate().withId(id).withFirstName(userName).withLastName(userLastname).withAllPhones(allPhones));
+            contactCache.add(new ContactDate().withId(id).withFirstName(userName).withLastName(userLastname).withAllPhones(allPhones));
         }
-        return contacts;
+        return new Contacts(contactCache);
     }
 
 
