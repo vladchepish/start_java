@@ -9,6 +9,21 @@ public class ContactDate {
     private String phone;
     private String eMail;
     private String group;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
+
+    public String getHomePhone() {
+        return homePhone;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public String getWorkPhone() {
+        return workPhone;
+    }
 
     public int getId() {
         return id;
@@ -79,6 +94,21 @@ public class ContactDate {
 
     public ContactDate withGroup(String group) {
         this.group = group;
+        return this;
+    }
+
+    public ContactDate withWorkPhone(String workPhone){
+        this.workPhone = workPhone;
+        return this;
+    }
+
+    public ContactDate withMobilePhone(String mobilePhone){
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    public ContactDate withHomePhone(String homePhone){
+        this.homePhone = homePhone;
         return this;
     }
 
