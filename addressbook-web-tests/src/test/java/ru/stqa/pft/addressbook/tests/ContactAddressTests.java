@@ -1,10 +1,11 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.junit.MatcherAssert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactDate;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.junit.MatcherAssert.*;
 
 public class ContactAddressTests extends TestBase {
 
@@ -21,9 +22,7 @@ public class ContactAddressTests extends TestBase {
         app.goTo().homePage();
         ContactDate contact = app.contact().all().iterator().next();
         ContactDate contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-        MatcherAssert.assertThat(contact.getAddress(), CoreMatchers.equalTo(contactInfoFromEditForm.getAddress()));
-        System.out.println(contact.getAddress());
-        System.out.println(contactInfoFromEditForm.getAddress());
+        assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
     }
 
 
