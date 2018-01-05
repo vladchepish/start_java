@@ -1,13 +1,14 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.junit.MatcherAssert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactDate;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.junit.MatcherAssert.*;
 
 public class ContactEmailTests extends TestBase {
 
@@ -24,7 +25,7 @@ public class ContactEmailTests extends TestBase {
         app.goTo().homePage();
         ContactDate contact = app.contact().all().iterator().next();
         ContactDate contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-        MatcherAssert.assertThat(contact.getAllEmails(), CoreMatchers.equalTo(mergeEmails(contactInfoFromEditForm)));
+        assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm)));
     }
 
     private String mergeEmails(ContactDate contact) {
