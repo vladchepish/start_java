@@ -52,19 +52,19 @@ public class ContactDateGenerator {
         XStream xstream = new XStream();
         xstream.processAnnotations(ContactDate.class);
         String xml = xstream.toXML(contacts);
-        Writer writer = new FileWriter(file);
-        writer.write(xml);
-        writer.close();
+        try (Writer writer = new FileWriter(file)) {
+            writer.write(xml);
+        }
     }
 
     private void saveAsCsv(List<ContactDate> contacts, File file) throws IOException {
-        Writer writer = new FileWriter(file);
-        for (ContactDate contact : contacts){
-            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getLastName(),
-                    contact.getMiddleName(), contact.getGroup(), contact.getHomePhone(), contact.getHomePhone(), contact.getMobilePhone(),
-                    contact.getWorkPhone(), contact.getEmail1(), contact.getEmail2(), contact.getEmail3(), contact.getAddress()));
+        try (Writer writer = new FileWriter(file)) {
+            for (ContactDate contact : contacts) {
+                writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstName(), contact.getLastName(),
+                        contact.getMiddleName(), contact.getGroup(), contact.getHomePhone(), contact.getHomePhone(), contact.getMobilePhone(),
+                        contact.getWorkPhone(), contact.getEmail1(), contact.getEmail2(), contact.getEmail3(), contact.getAddress()));
+            }
         }
-        writer.close();
     }
 
     private List<ContactDate> generateContacts(int count) {
