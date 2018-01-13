@@ -38,30 +38,4 @@
     <email2>test22@test.ru</email2>
     <email3>test32@test.ru</email3>
   </contact>
-  <contact>
-    <firstName>firstName3</firstName>
-    <middleName>middleName3</middleName>
-    <lastName>lastName3</lastName>
-    <address>address3</address>
-    <group>testName</group>
-    <homePhone>+(3)-111-22-33</homePhone>
-    <mobilePhone>+(3)-111-22-33</mobilePhone>
-    <workPhone>+(3)-111-22-33</workPhone>
-    <email1>test13@test.ru</email1>
-    <email2>test23@test.ru</email2>
-    <email3>test33@test.ru</email3>
-  </contact>
-  <contact>
-    <firstName>firstName4</firstName>
-    <middleName>middleName4</middleName>
-    <lastName>lastName4</lastName>
-    <address>address4</address>
-    <group>testName</group>
-    <homePhone>+(4)-111-22-33</homePhone>
-    <mobilePhone>+(4)-111-22-33</mobilePhone>
-    <workPhone>+(4)-111-22-33</workPhone>
-    <email1>test14@test.ru</email1>
-    <email2>test24@test.ru</email2>
-    <email3>test34@test.ru</email3>
-  </contact>
 </list>
