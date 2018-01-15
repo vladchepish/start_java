@@ -54,8 +54,10 @@ public class GroupDate {
     @Override
     public String toString() {
         return "GroupDate{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
+                ", header='" + header + '\'' +
+                ", footer='" + footer + '\'' +
                 '}';
     }
 
