@@ -35,7 +35,7 @@
         <property name="hbm2ddl.auto">validate</property>
 
         <!-- Names the annotated entity class -->
-        <mapping class="org.hibernate.tutorial.annotations.Event"/>
+        <mapping class="ru.stqa.pft.addressbook.model.GroupDate"/>
 
     </session-factory>
 
