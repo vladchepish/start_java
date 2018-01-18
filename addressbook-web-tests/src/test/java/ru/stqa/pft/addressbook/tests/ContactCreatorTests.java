@@ -35,7 +35,6 @@ public class ContactCreatorTests extends TestBase {
 
     @Test(dataProvider = "validContacts")
     public void ContactCreatorTests(ContactDate contact){
-        File photo = new File("src/test/resources/avatar.png");
         app.goTo().homePage();
         Contacts before = app.contact().all();
         app.contact().create(contact, true);

@@ -68,13 +68,14 @@ public class ContactDateGenerator {
     }
 
     private List<ContactDate> generateContacts(int count) {
+        File photo = new File("src/test/resources/avatar.png");
         List<ContactDate> contacts = new ArrayList<ContactDate>();
         for (int i = 0; i < count; i++){
             contacts.add(new ContactDate()
                     .withFirstName(String.format("firstName" + "%s", i)).withLastName(String.format("lastName" + "%s", i)).withMiddleName(String.format("middleName" +"%s", i))
                     .withGroup("testName")
                     .withHomePhone(String.format("+(" + "%s" + ")-111-22-33", i)).withWorkPhone(String.format("+(" + "%s" + ")-111-22-33", i)).withMobilePhone(String.format("+(" + "%s" + ")-111-22-33", i))
-                    .withEmail1(String.format("test1" + "%s" + "@test.ru", i)).withEmail2(String.format("test2" + "%s" + "@test.ru", i)).withEmail3(String.format("test3" + "%s" + "@test.ru", i))
+                    .withEmail1(String.format("test1" + "%s" + "@test.ru", i)).withEmail2(String.format("test2" + "%s" + "@test.ru", i)).withEmail3(String.format("test3" + "%s" + "@test.ru", i)).withPhoto(photo)
                     .withAddress(String.format("address" + "%s", i)));
         }
         return contacts;
