@@ -4,7 +4,6 @@
     <middleName>middleName0</middleName>
     <lastName>lastName0</lastName>
     <address>address0</address>
-    <group>testName</group>
     <homePhone>+(0)-111-22-33</homePhone>
     <mobilePhone>+(0)-111-22-33</mobilePhone>
     <workPhone>+(0)-111-22-33</workPhone>
@@ -18,7 +17,6 @@
     <middleName>middleName1</middleName>
     <lastName>lastName1</lastName>
     <address>address1</address>
-    <group>testName</group>
     <homePhone>+(1)-111-22-33</homePhone>
     <mobilePhone>+(1)-111-22-33</mobilePhone>
     <workPhone>+(1)-111-22-33</workPhone>
