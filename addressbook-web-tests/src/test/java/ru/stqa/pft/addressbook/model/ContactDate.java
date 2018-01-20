@@ -30,10 +30,6 @@ public class ContactDate {
     private String address;
 
     @Transient
-    private String phone;
-    @Transient
-    private String eMail;
-    @Transient
     private String group;
 
     @Column(name = "home")
@@ -131,14 +127,6 @@ public class ContactDate {
         return address;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public String geteMail() {
-        return eMail;
-    }
-
     public String getGroup() {
         return group;
     }
@@ -165,16 +153,6 @@ public class ContactDate {
 
     public ContactDate withAddress(String address) {
         this.address = address;
-        return this;
-    }
-
-    public ContactDate withPhone(String phone) {
-        this.phone = phone;
-        return this;
-    }
-
-    public ContactDate witheMail(String eMail) {
-        this.eMail = eMail;
         return this;
     }
 
@@ -267,8 +245,6 @@ public class ContactDate {
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", eMail='" + eMail + '\'' +
                 ", group='" + group + '\'' +
                 ", homePhone='" + homePhone + '\'' +
                 ", mobilePhone='" + mobilePhone + '\'' +
