@@ -17,8 +17,10 @@ public class ContactModificationTests extends TestBase {
         File photo = new File("src/test/resources/avatar.png");
         app.goTo().homePage();
         if (app.db().contacts().size() == 0) {
-            app.contact().create(new ContactDate().withFirstName("testFirstName1").withHomePhone("11111").withMobilePhone("22222")
-                    .withWorkPhone("333333").withGroup("testName").withPhoto(photo), true);
+            app.contact().create(new ContactDate().withFirstName("testFirstName1").withMiddleName("testMiddleName").withLastName("testLastName")
+                    .withAddress("testAddress").withHomePhone("11111").withMobilePhone("22222").withWorkPhone("333333")
+                    .withEmail1("test@test.test").withEmail2("test@test2.test").withEmail3("test@test3.test")
+                    .withGroup("testName").withPhoto(photo), true);
         }
     }
 
@@ -29,7 +31,9 @@ public class ContactModificationTests extends TestBase {
         Contacts before = app.db().contacts();
         ContactDate modifiedContact = before.iterator().next();
         ContactDate contact = new ContactDate()
-                .withId(modifiedContact.getId()).withFirstName("name").withMiddleName("middle").withLastName("last").withAddress("sad").withHomePhone("23123124").withHomePhone("aas@as.as").withPhoto(photo);
+                .withId(modifiedContact.getId()).withFirstName("name").withMiddleName("middle").withLastName("last")
+                .withAddress("address").withHomePhone("9999").withMobilePhone("8888").withWorkPhone("77777")
+                .withEmail1("aas@as.as").withEmail2("aas2@as.as").withEmail3("asaa3@asd.as").withPhoto(photo);
         app.goTo().homePage();
         app.contact().modify(contact);
         assertThat(app.contact().count(),equalTo( before.size()));
