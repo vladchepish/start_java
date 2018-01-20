@@ -17,7 +17,8 @@ public class ContactModificationTests extends TestBase {
         File photo = new File("src/test/resources/avatar.png");
         app.goTo().homePage();
         if (app.db().contacts().size() == 0) {
-            app.contact().create(new ContactDate().withFirstName("testFirstName1").withHomePhone("11111").withMobilePhone("22222").withWorkPhone("333333").withGroup("testName").withPhoto(photo), true);
+            app.contact().create(new ContactDate().withFirstName("testFirstName1").withHomePhone("11111").withMobilePhone("22222")
+                    .withWorkPhone("333333").withGroup("testName").withPhoto(photo), true);
         }
     }
 
@@ -34,6 +35,8 @@ public class ContactModificationTests extends TestBase {
         assertThat(app.contact().count(),equalTo( before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before.withOut(modifiedContact).withAdded(contact)));
+        System.out.println(before);
+        System.out.println(after);
     }
 
 }

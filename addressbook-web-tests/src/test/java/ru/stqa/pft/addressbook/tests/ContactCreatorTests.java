@@ -36,12 +36,14 @@ public class ContactCreatorTests extends TestBase {
     @Test(dataProvider = "validContacts")
     public void ContactCreatorTests(ContactDate contact){
         app.goTo().homePage();
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         app.contact().create(contact, true);
         assertThat(app.contact().count(),equalTo( before.size() + 1));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after, equalTo(
                 before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
+        System.out.println(after);
+        System.out.println(before);
     }
 
 }
