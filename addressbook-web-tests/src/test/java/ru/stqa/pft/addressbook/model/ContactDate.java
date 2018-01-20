@@ -79,6 +79,9 @@ public class ContactDate {
     }
 
     public Groups getGroups() {
+        if (groups == null) {
+            groups = new HashSet<>();
+        }
         return new Groups(groups);
     }
 
@@ -203,6 +206,9 @@ public class ContactDate {
     }
 
     public ContactDate inGroup(GroupDate group){
+        if (groups == null) {
+            groups = new HashSet<>();
+        }
         groups.add(group);
         return this;
     }
