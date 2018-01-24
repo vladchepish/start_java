@@ -32,6 +32,21 @@ public class UsersDate {
         return email;
     }
 
+    public UsersDate withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public UsersDate withUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public UsersDate withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "UsersDate{" +
