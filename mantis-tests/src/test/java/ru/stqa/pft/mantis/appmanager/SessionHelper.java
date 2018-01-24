@@ -1,7 +1,6 @@
 package ru.stqa.pft.mantis.appmanager;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import ru.stqa.pft.mantis.model.UsersDate;
 
 public class SessionHelper extends HelperBase{
@@ -36,5 +35,12 @@ public class SessionHelper extends HelperBase{
 
     public void selectUser(UsersDate userNumber) {
         selectUserById(userNumber.getId());
+    }
+
+    public void finishRestor(String confirmationLink, String password) {
+        wd.get(confirmationLink);
+        type(By.name("password"), password);
+        type(By.name("password_confirm"), password);
+        click(By.cssSelector("button[type='submit']"));
     }
 }
