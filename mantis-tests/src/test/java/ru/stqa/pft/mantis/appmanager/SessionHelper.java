@@ -21,7 +21,15 @@ public class SessionHelper extends HelperBase{
 
     }
 
+    public void selectUser(int userNamber){
+        wd.findElement(By.xpath("//a[@href='manage_user_edit_page.php?user_id=" + userNamber +"']")).click();
+    }
+
     public void goToUsersPage() {
-        wd.get(app.getProperty("web.baseUrl" + "manage_user_page.php"));
+        wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
+    }
+
+    public void resetPassword() {
+        wd.findElement(By.cssSelector("input[value='Сбросить пароль']")).click();
     }
 }

@@ -17,10 +17,13 @@ public class ChengingPasswordTests extends TestBase {
 
     @Test
     public void testChangingPassword(){
+        int userNumber = 5;
         app.session().enterToSystem();
         /*Позже не помешает добавить сюда проверку, что мы залогинились, например по тому же отображению имени пользователя.
         * Нежно будет написать метод, который проверяет на вебе наличие блока отображающего имя пользователя*/
         app.session().goToUsersPage();
+        app.session().selectUser(userNumber);
+        //app.session().resetPassword();
 
     }
 
