@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.stqa.pft.mantis.model.Users;
+import ru.stqa.pft.mantis.model.UsersDate;
 
 public class ChengingPasswordTests extends TestBase {
-
-    WebDriver wd;
 
     @BeforeMethod
     public void startMailServer(){
@@ -17,13 +17,15 @@ public class ChengingPasswordTests extends TestBase {
 
     @Test
     public void testChangingPassword(){
-        int userNumber = 5;
+        Users atStart = app.db().users();
+        UsersDate resetedPasswordUser = atStart.iterator().next();
+        UsersDate userNumber = new UsersDate().withId(resetedPasswordUser.getId()).withEmail(resetedPasswordUser.getEmail()).withUsername(resetedPasswordUser.getUsername());
         app.session().enterToSystem();
         /*Позже не помешает добавить сюда проверку, что мы залогинились, например по тому же отображению имени пользователя.
         * Нежно будет написать метод, который проверяет на вебе наличие блока отображающего имя пользователя*/
         app.session().goToUsersPage();
         app.session().selectUser(userNumber);
-        //app.session().resetPassword();
+        app.session().resetPassword();
 
     }
 
