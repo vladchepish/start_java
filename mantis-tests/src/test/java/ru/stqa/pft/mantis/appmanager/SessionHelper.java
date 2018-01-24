@@ -2,6 +2,7 @@ package ru.stqa.pft.mantis.appmanager;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import ru.stqa.pft.mantis.model.UsersDate;
 
 public class SessionHelper extends HelperBase{
 
@@ -21,8 +22,8 @@ public class SessionHelper extends HelperBase{
 
     }
 
-    public void selectUser(int userNamber){
-        wd.findElement(By.xpath("//a[@href='manage_user_edit_page.php?user_id=" + userNamber +"']")).click();
+    public void selectUserById(int id){
+        wd.findElement(By.xpath("//a[@href='manage_user_edit_page.php?user_id=" + id +"']")).click();
     }
 
     public void goToUsersPage() {
@@ -31,5 +32,9 @@ public class SessionHelper extends HelperBase{
 
     public void resetPassword() {
         wd.findElement(By.cssSelector("input[value='Сбросить пароль']")).click();
+    }
+
+    public void selectUser(UsersDate userNumber) {
+        selectUserById(userNumber.getId());
     }
 }
