@@ -20,14 +20,12 @@ public class ContactModificationTests extends TestBase {
         File photo = new File("src/test/resources/avatar.png");
         app.goTo().homePage();
 
-        if (app.db().groups().size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupDate().withName("testName"));
-        }
-
-        groups = app.db().groups();
-
         if (app.db().contacts().size() == 0) {
+            if (app.db().groups().size() == 0) {
+                app.goTo().groupPage();
+                app.group().create(new GroupDate().withName("testName"));
+                groups = app.db().groups();
+            }
             app.contact().create(new ContactDate().withFirstName("testFirstName1").withMiddleName("testMiddleName").withLastName("testLastName")
                     .withAddress("testAddress").withHomePhone("11111").withMobilePhone("22222").withWorkPhone("333333")
                     .withEmail1("test@test.test").withEmail2("test@test2.test").withEmail3("test@test3.test")
