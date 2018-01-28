@@ -25,4 +25,11 @@ public class NavigationHelper extends HelperBase {
         }
         click(By.linkText("home"));
     }
+
+    public void selectedGroupPage(int id){
+        if (isElementPresent(By.id("maintable"))){
+            return;
+        }
+        click(By.cssSelector("a[href='./?group=" + id + "']"));
+    }
 }
