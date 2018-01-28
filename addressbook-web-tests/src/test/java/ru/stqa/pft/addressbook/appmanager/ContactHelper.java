@@ -83,6 +83,15 @@ public class ContactHelper extends HelperBase{
         click(By.name("add"));
     }
 
+    public void removeFromGroup(){
+        click(By.cssSelector("input[name='remove']"));
+    }
+
+    public void filterGroupById(int id) {
+        click(By.cssSelector("#right"));
+        click(By.cssSelector("#right>select>option[value='" + id + "']"));
+    }
+
     public void create(ContactDate contact, boolean boolDate) {
         initCintactCreation();
         fillingContactForm(contact, boolDate);
@@ -153,4 +162,6 @@ public class ContactHelper extends HelperBase{
                 .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work)
                 .withEmail1(email1).withEmail2(email2).withEmail3(email3).withAddress(address);
     }
+
+
 }
