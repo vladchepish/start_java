@@ -73,6 +73,16 @@ public class ContactHelper extends HelperBase{
         click(By.name("update"));
     }
 
+    public void selectAddedContactById(int id){
+        wd.findElement(By.cssSelector("input[id='" + id + "']")).click();
+    }
+
+    public void addingInGroupById(int id){
+        click(By.cssSelector("select[name='to_group']"));
+        click(By.cssSelector(".right>select>option[value='" + id + "']"));
+        click(By.name("add"));
+    }
+
     public void create(ContactDate contact, boolean boolDate) {
         initCintactCreation();
         fillingContactForm(contact, boolDate);
