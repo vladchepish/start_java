@@ -23,25 +23,25 @@ public class SoapHelper {
 
     public Set<Project> getProjects() throws MalformedURLException, ServiceException, RemoteException {
         MantisConnectPortType mc = getMantisConnect();
-        ProjectData[] projects = mc.mc_projects_get_user_accessible("administrator", "root");
+        ProjectData[] projects = mc.mc_projects_get_user_accessible(app.getProperty("soap.login"), app.getProperty("soap.pass"));
         return Arrays.asList(projects).stream()
                 .map((p) -> new Project().withId(p.getId().intValue()).withName(p.getName())).collect(Collectors.toSet());
     }
 
     private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
-        return new MantisConnectLocator().getMantisConnectPort(new URL("http://localhost/mantis/api/soap/mantisconnect.php"));
+        return new MantisConnectLocator().getMantisConnectPort(new URL(app.getProperty("soap.url4conntct")));
     }
 
     public Issue addIssue(Issue issue) throws MalformedURLException, ServiceException, RemoteException {
         MantisConnectPortType mc = getMantisConnect();
-        String[] cat = mc.mc_project_get_categories("administrator", "root", BigInteger.valueOf(issue.getProject().getId()));
+        String[] cat = mc.mc_project_get_categories(app.getProperty("soap.login"), app.getProperty("soap.pass"), BigInteger.valueOf(issue.getProject().getId()));
         IssueData issueData = new IssueData();
         issueData.setSummary(issue.getSummery());
         issueData.setDescription(issue.getDescription());
         issueData.setProject(new ObjectRef(BigInteger.valueOf(issue.getProject().getId()), issue.getProject().getName()));
         issueData.setCategory(cat[0]);
-        BigInteger issueId = mc.mc_issue_add("administrator", "root", issueData);
-        IssueData createdIssueData = mc.mc_issue_get("administrator", "root", issueId);
+        BigInteger issueId = mc.mc_issue_add(app.getProperty("soap.login"), app.getProperty("soap.pass"), issueData);
+        IssueData createdIssueData = mc.mc_issue_get(app.getProperty("soap.login"), app.getProperty("soap.pass"), issueId);
         return new Issue().withId(createdIssueData.getId().intValue())
                 .withSummery(createdIssueData.getSummary()).withDescription(createdIssueData.getDescription())
                 .withProject(new Project().withId(createdIssueData.getProject().getId().intValue())
