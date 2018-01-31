@@ -30,4 +30,11 @@ public class SoapTests extends TestBase{
         Assert.assertEquals(issue.getSummery(), created.getSummery());
 
     }
+
+    @Test
+    public void testGetStaus() throws RemoteException, ServiceException, MalformedURLException {
+        int id = 5;
+        System.out.println(app.soapHelper().getStatus(id));
+    }
+
 }
