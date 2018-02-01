@@ -10,6 +10,7 @@ import org.apache.http.message.BasicNameValuePair;
 import ru.stqa.pft.rest.model.Issue;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Set;
 
 public class RestHelper {
@@ -32,6 +33,12 @@ public class RestHelper {
         return new Gson().fromJson(issues, new TypeToken<Set<Issue>>(){}.getType());
     }
 
+    public String getStatus(int issueId) throws IOException {
+        String json = getExecutor().execute(Request.Get("http://demo.bugify.com/api/issues/" + BigInteger.valueOf(issueId) +".json")).returnContent().asString();
+        String status = new JsonParser().parse(json).getAsJsonObject().get("issues").getAsJsonArray().get(0).getAsJsonObject().get("state_name").getAsString();
+        System.out.println(status);
+        return status;
+    }
 
     public int createIssue(Issue newIssue) throws IOException {
         String json = getExecutor().execute(Request.Post("http://demo.bugify.com/api/issues.json")
