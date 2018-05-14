@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-test-new.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-test-new.iml" group="addressbook-web-tests-new" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/addressbook-web-tests-new/addressbook-web-tests-new.iml" filepath="$PROJECT_DIR$/addressbook-web-tests-new/addressbook-web-tests-new.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_main.iml" group="addressbook-web-tests-new" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests-new_test.iml" group="addressbook-web-tests-new" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" group="addressbook-web-tests" />
@@ -12,6 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests_main.iml" group="mantis-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mantis-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mantis-tests_test.iml" group="mantis-tests" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/new-adr.iml" filepath="$PROJECT_DIR$/.idea/modules/new-adr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/new-adr_main.iml" filepath="$PROJECT_DIR$/.idea/modules/new-adr_main.iml" group="new-adr" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/new-adr_test.iml" filepath="$PROJECT_DIR$/.idea/modules/new-adr_test.iml" group="new-adr" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample_main.iml" group="rest-sample" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-sample_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-sample_test.iml" group="rest-sample" />

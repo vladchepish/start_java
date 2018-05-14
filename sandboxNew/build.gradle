@@ -1,6 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "FrstPrgrm"
 
 repositories{
     mavenCentral()
@@ -8,6 +6,7 @@ repositories{
 
 dependencies{
     compile 'org.testng:testng:6.11'
+    compile 'org.seleniumhq.selenium:selenium-java:3.8.0'
 }
 
 test{
