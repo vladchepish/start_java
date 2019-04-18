@@ -13,11 +13,11 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void login(String login, String passwword){
+    public MainAdminPage login(String login, String passwword){
         findAndFeelField(LOGIN_INPUT, login);
         findAndFeelField(PASSWORD_INPUT, passwword);
         clickByElement(LOGIN_BTN);
-
+        return new MainAdminPage(driver);
     }
 
 }
