@@ -1,9 +1,10 @@
-package ru.stqa.training.selenium.tests;
+package ru.stqa.training.selenium.tests.front;
 
 import org.junit.Before;
 import org.junit.Test;
 import ru.stqa.training.selenium.peges.MainWebSitePage;
 import ru.stqa.training.selenium.peges.Navigation;
+import ru.stqa.training.selenium.tests.TestBase;
 
 public class CheckStickersOnGoodsTest extends TestBase {
 

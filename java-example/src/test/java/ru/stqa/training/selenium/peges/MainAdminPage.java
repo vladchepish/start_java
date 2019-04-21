@@ -16,10 +16,16 @@ public class MainAdminPage extends BasePage {
     private static final By LEFT_MENU_ITEM = By.cssSelector("ul#box-apps-menu li#app-");
     private static final By LEFT_MENU_SUBITEM = By.cssSelector("ul.docs li");
     private static final By PAGE_HEADER = By.cssSelector("td#content h1");
+    private static final By LEFT_MENU_COUNTRIES_LINK = By.xpath("//li//a[contains(@href, 'countries')]");
 
     public MainAdminPage(WebDriver driver) {
         super(driver);
         shortWait.until(ExpectedConditions.visibilityOfElementLocated(LEFT_SIDEBAR));
+    }
+
+    public AdminCountriesPage goToCountriesPage(){
+        getElement(LEFT_MENU_COUNTRIES_LINK).click();
+        return new AdminCountriesPage(driver);
     }
 
     public void clickEachItemAndSubItemLeftMenu(){
