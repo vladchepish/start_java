@@ -12,4 +12,9 @@ public class Navigation extends BasePage {
     public void goToAdminAuatorizationPage() {
         driver.get("http://localhost/litecart/admin/");
     }
+
+    public MainWebSitePage goToWebSiteMainPage(){
+        driver.get("http://localhost/litecart/");
+        return new MainWebSitePage(driver);
+    }
 }
