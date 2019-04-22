@@ -19,10 +19,10 @@ public class TestBase {
 
     @Before
     public void start() throws IOException {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        //driver = new InternetExplorerDriver();
+        //driver = new ChromeDriver();
+        driver = new InternetExplorerDriver();
         //driver = new FirefoxDriver();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
         BasePage basePage = new BasePage(driver);
     }
