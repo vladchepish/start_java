@@ -1,6 +1,5 @@
 package ru.stqa.training.selenium.peges;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +16,7 @@ public class MainAdminPage extends BasePage {
     private static final By LEFT_MENU_SUBITEM = By.cssSelector("ul.docs li");
     private static final By PAGE_HEADER = By.cssSelector("td#content h1");
     private static final By LEFT_MENU_COUNTRIES_LINK = By.xpath("//li//a[contains(@href, 'countries')]");
+    private static final By LEGT_MENU_GEO_ZONE_LINK = By.xpath("//li//a[contains(@href, 'geo_zone')]");
 
     public MainAdminPage(WebDriver driver) {
         super(driver);
@@ -26,6 +26,11 @@ public class MainAdminPage extends BasePage {
     public AdminCountriesPage goToCountriesPage(){
         getElement(LEFT_MENU_COUNTRIES_LINK).click();
         return new AdminCountriesPage(driver);
+    }
+
+    public AdminGeoZonesPage goToGeoZonePage() {
+        getElement(LEGT_MENU_GEO_ZONE_LINK).click();
+        return new AdminGeoZonesPage(driver);
     }
 
     public void clickEachItemAndSubItemLeftMenu(){
@@ -45,4 +50,6 @@ public class MainAdminPage extends BasePage {
             }
         }
     }
+
+
 }

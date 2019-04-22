@@ -30,15 +30,6 @@ public class AdminCountriesPage extends BasePage {
         return countriesNameList;
     }
 
-    public LinkedList<String> sortListByAlphabet(List<String> countrysNameList) {
-        LinkedList<String> sortedList = new LinkedList<>();
-        for (String item : countrysNameList){
-            sortedList.add(item);
-        }
-        sortedList.sort(Comparator.naturalOrder());
-        return sortedList;
-    }
-
     public void compareCountryLists(List<String> countrysNameList, List<String> sortedCountysNameList) {
         assertTrue("Количество элементов списков должно совпадать",
                 countrysNameList.size() == sortedCountysNameList.size());

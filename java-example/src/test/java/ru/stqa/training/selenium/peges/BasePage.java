@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.training.selenium.lib.TimeOut;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BasePage {
@@ -56,5 +58,14 @@ public class BasePage {
 
     protected void clickByElement(By by){
         getElement(by).click();
+    }
+
+    public LinkedList<String> sortListByAlphabet(List<String> notSortedList) {
+        LinkedList<String> sortedList = new LinkedList<>();
+        for (String item : notSortedList){
+            sortedList.add(item);
+        }
+        sortedList.sort(Comparator.naturalOrder());
+        return sortedList;
     }
 }
