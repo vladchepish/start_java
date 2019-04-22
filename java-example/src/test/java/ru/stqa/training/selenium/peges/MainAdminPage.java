@@ -17,6 +17,7 @@ public class MainAdminPage extends BasePage {
     private static final By PAGE_HEADER = By.cssSelector("td#content h1");
     private static final By LEFT_MENU_COUNTRIES_LINK = By.xpath("//li//a[contains(@href, 'countries')]");
     private static final By LEGT_MENU_GEO_ZONE_LINK = By.xpath("//li//a[contains(@href, 'geo_zone')]");
+    private static final By LEFT_MENU_LOGOUT_BTN = By.xpath("//a[contains(@href, 'logout')]");
 
     public MainAdminPage(WebDriver driver) {
         super(driver);
@@ -50,6 +51,4 @@ public class MainAdminPage extends BasePage {
             }
         }
     }
-
-
 }

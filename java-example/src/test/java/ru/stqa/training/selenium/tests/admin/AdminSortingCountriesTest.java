@@ -16,7 +16,7 @@ public class AdminSortingCountriesTest extends TestBase {
     private static AdminGeoZonesPage adminGeoZonesPage;
 
     @Before
-    public void beforeMEthod(){
+    public void beforeMEthod() {
         loginPage = new LoginPage(driver);
         navigation = new Navigation(driver);
         navigation.goToAdminAuatorizationPage();
@@ -25,7 +25,7 @@ public class AdminSortingCountriesTest extends TestBase {
     }
 
     @Test
-    public void sortingCountriesTest(){
+    public void sortingCountriesTest() {
         adminCountriesPage = mainPage.goToCountriesPage();
         LinkedList<String> countrysNameList = adminCountriesPage.getCountriesList();
         LinkedList<String> sortedCountysNameList = adminCountriesPage.sortListByAlphabet(countrysNameList);
@@ -33,10 +33,9 @@ public class AdminSortingCountriesTest extends TestBase {
     }
 
     @Test
-    public void sortingLocationInGeoZone(){
+    public void sortingLocationInGeoZone() {
         adminGeoZonesPage = mainPage.goToGeoZonePage();
         int countCountries = adminGeoZonesPage.countCountries();
         adminGeoZonesPage.checkInfoOrderInside(countCountries);
-
     }
 }
