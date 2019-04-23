@@ -38,4 +38,13 @@ public class AdminSortingCountriesTest extends TestBase {
         int countCountries = adminGeoZonesPage.countCountries();
         adminGeoZonesPage.checkInfoOrderInside(countCountries);
     }
+
+    @Test
+    public void sortingIntoCountriesTest(){
+        adminCountriesPage = mainPage.goToCountriesPage();
+        LinkedList<String> notEmptyCountries = adminCountriesPage.getNotEmptyCountries();
+        System.out.println(notEmptyCountries.size());
+        adminCountriesPage.goInsideCountryAndCheckGeoZOneOrder(notEmptyCountries);
+
+    }
 }
