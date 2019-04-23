@@ -7,10 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.training.selenium.lib.TimeOut;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class BasePage {
 
@@ -67,5 +64,28 @@ public class BasePage {
         }
         sortedList.sort(Comparator.naturalOrder());
         return sortedList;
+    }
+
+    public boolean isRegularPriceGrey(String color) {
+        if (color != null) {
+            String template = color.substring(color.indexOf("(") + 1, color.lastIndexOf(")")).replaceAll(" ", "");
+            List<String> listRGB = Arrays.asList(template.split(","));
+            String red = listRGB.get(0);
+            String green = listRGB.get(1);
+            String blue = listRGB.get(2);
+            return red.equals(green) && green.equals(blue);
+        }
+        return false;
+    }
+
+    public boolean isComparingPriceColorRed(String color) {
+        if (color != null) {
+            String template = color.substring(color.indexOf("(") + 1, color.lastIndexOf(")")).replaceAll(" ", "");
+            List<String> listRGB = Arrays.asList(template.split(","));
+            String green = listRGB.get(1);
+            String blue = listRGB.get(2);
+            return green.equals("0") && blue.equals("0");
+        }
+        return false;
     }
 }

@@ -67,11 +67,13 @@ public class MainWebSitePage extends BasePage{
 
     private void checkAttribytes(WebElement regPrice, WebElement compPrice) {
         assertTrue("Цвет обычной цены должен быть серым",
-                regPrice.getCssValue("color").contains("119, 119, 119"));
+                isRegularPriceGrey(regPrice.getCssValue("color")));
+                //regPrice.getCssValue("color").contains("119, 119, 119"));
         assertTrue("Значение обычной цены должно быть перечёркнутым",
                 regPrice.getCssValue("text-decoration").contains("line-through"));
         assertTrue("Цвет акционной цены должен быть красным",
-                compPrice.getCssValue("color").contains("204, 0, 0"));
+                isComparingPriceColorRed(compPrice.getCssValue("color")));
+                //compPrice.getCssValue("color").contains("204, 0, 0"));
         assertTrue("Значение акционной цены должно быть жирным. Actual: " + compPrice.getCssValue("font-weight"),
                 compPrice.getCssValue("font-weight").contains("700") ||
                         compPrice.getCssValue("font-weight").contains("900"));
