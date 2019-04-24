@@ -53,6 +53,11 @@ public class BasePage {
         getElement(by).sendKeys(text);
     }
 
+    protected void findAndChoseOptionFromSelect(By by, String value){
+        clickByElement(by);
+        getElement(By.xpath("//li[text()='" + value + "']")).click();
+    }
+
     protected void clickByElement(By by){
         getElement(by).click();
     }

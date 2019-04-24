@@ -2,9 +2,8 @@ package ru.stqa.training.selenium.peges;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import ru.stqa.training.selenium.Objects.Good;
+import ru.stqa.training.selenium.objects.Good;
 
 import static org.junit.Assert.assertTrue;
 

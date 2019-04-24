@@ -4,7 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import ru.stqa.training.selenium.Objects.Good;
+import ru.stqa.training.selenium.objects.Good;
+import ru.stqa.training.selenium.objects.User;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -21,6 +22,12 @@ public class MainWebSitePage extends BasePage{
     private static final By GOOD_NAMNE = By.cssSelector("div.name");
     private static final By REGULAR_PRICE = By.cssSelector("s.regular-price");
     private static final By COMPARING_PRICE = By.cssSelector("strong.campaign-price");
+    //Login and Registration form in left sidebar
+    private static final By EMAIL_FIELD_IN_LOGIN_FORM = By.cssSelector("form[name='login_form'] input[name='email']");
+    private static final By PASSWEORD_FIELD_IN_LOGIN_FORM = By.cssSelector("form[name='login_form'] input[name='password']");
+    private static final By LOGIN_BTN_IN_LOGIN_FORM = By.cssSelector("form[name='login_form'] button[name='login']");
+    private static final By GO_TO_REGISTRATION_LINK = By.cssSelector("form[name='login_form'] a");
+
 
 
     public MainWebSitePage(WebDriver driver) {
@@ -87,5 +94,17 @@ public class MainWebSitePage extends BasePage{
         WebElement goodsElementLIst = comparingBox.findElements(GOOD_ITEM).get(0);
         goodsElementLIst.findElement(By.cssSelector("a")).click();
         return new WebSiteProductPage(driver);
+    }
+
+    public WebSiteRegistrationPage openRegistrationPage() {
+        getElement(GO_TO_REGISTRATION_LINK).click();
+        return new WebSiteRegistrationPage(driver);
+    }
+
+    public WebSiteHomePage login(User user){
+        findAndFeelField(EMAIL_FIELD_IN_LOGIN_FORM, user.getEmail());
+        findAndFeelField(PASSWEORD_FIELD_IN_LOGIN_FORM, user.getPassword());
+        clickByElement(LOGIN_BTN_IN_LOGIN_FORM);
+        return new WebSiteHomePage(driver);
     }
 }
