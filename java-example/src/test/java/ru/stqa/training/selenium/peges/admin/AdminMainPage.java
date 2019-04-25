@@ -1,15 +1,16 @@
-package ru.stqa.training.selenium.peges;
+package ru.stqa.training.selenium.peges.admin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.stqa.training.selenium.peges.BasePage;
 
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class MainAdminPage extends BasePage {
+public class AdminMainPage extends BasePage {
 
     private static final By LEFT_SIDEBAR = By.cssSelector("td[id='sidebar']");
     private static final By LEFT_MENU_ITEM = By.cssSelector("ul#box-apps-menu li#app-");
@@ -18,8 +19,9 @@ public class MainAdminPage extends BasePage {
     private static final By LEFT_MENU_COUNTRIES_LINK = By.xpath("//li//a[contains(@href, 'countries')]");
     private static final By LEGT_MENU_GEO_ZONE_LINK = By.xpath("//li//a[contains(@href, 'geo_zone')]");
     private static final By LEFT_MENU_LOGOUT_BTN = By.xpath("//a[contains(@href, 'logout')]");
+    private static final By LEFT_MENU_CATALOG_LINK = By.cssSelector("li#app->a[href*='catalog']");
 
-    public MainAdminPage(WebDriver driver) {
+    public AdminMainPage(WebDriver driver) {
         super(driver);
         shortWait.until(ExpectedConditions.visibilityOfElementLocated(LEFT_SIDEBAR));
     }
@@ -32,6 +34,11 @@ public class MainAdminPage extends BasePage {
     public AdminGeoZonesPage goToGeoZonePage() {
         getElement(LEGT_MENU_GEO_ZONE_LINK).click();
         return new AdminGeoZonesPage(driver);
+    }
+
+    public AdminCatalogPage goToCatalogPage() {
+        clickByElement(LEFT_MENU_CATALOG_LINK);
+        return new AdminCatalogPage(driver);
     }
 
     public void clickEachItemAndSubItemLeftMenu(){

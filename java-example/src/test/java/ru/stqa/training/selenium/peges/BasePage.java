@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.training.selenium.lib.TimeOut;
 
+import java.io.File;
 import java.util.*;
 
 public class BasePage {
@@ -93,4 +94,11 @@ public class BasePage {
         }
         return false;
     }
+
+    protected void attach(By by, File file) {
+        if (file != null) {
+            getElement(by).sendKeys(file.getAbsolutePath());
+        }
+    }
+
 }

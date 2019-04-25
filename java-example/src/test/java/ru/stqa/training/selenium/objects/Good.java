@@ -1,5 +1,6 @@
 package ru.stqa.training.selenium.objects;
 
+import java.io.File;
 import java.util.Objects;
 
 public class Good {
@@ -7,6 +8,18 @@ public class Good {
     String name;
     String regularPrice;
     String comparingPrice;
+    String code;
+    String photo;
+    String description;
+
+    public Good setPhoto(File photo){
+        this.photo = photo.getPath();
+        return this;
+    }
+
+    public File getPhoto(){
+        return new File(photo);
+    }
 
     public String getName() {
         return name;
@@ -32,6 +45,24 @@ public class Good {
 
     public Good setComparingPrice(String comparingPrice) {
         this.comparingPrice = comparingPrice;
+        return this;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public Good setCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Good setDescription(String description) {
+        this.description = description;
         return this;
     }
 

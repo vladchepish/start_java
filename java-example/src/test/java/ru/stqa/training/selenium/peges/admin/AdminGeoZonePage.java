@@ -1,9 +1,10 @@
-package ru.stqa.training.selenium.peges;
+package ru.stqa.training.selenium.peges.admin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.stqa.training.selenium.peges.BasePage;
 
 import java.util.LinkedList;
 import java.util.List;

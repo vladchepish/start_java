@@ -1,4 +1,4 @@
-package ru.stqa.training.selenium.peges;
+package ru.stqa.training.selenium.peges.front;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,13 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.stqa.training.selenium.objects.Good;
 import ru.stqa.training.selenium.objects.User;
+import ru.stqa.training.selenium.peges.BasePage;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class MainWebSitePage extends BasePage{
+public class WebSiteMainPage extends BasePage {
 
     private static final By GOODS_ITEM = By.cssSelector("ul.products li");
     private static final By STICKER = By.cssSelector("div.sticker");
@@ -30,7 +31,7 @@ public class MainWebSitePage extends BasePage{
 
 
 
-    public MainWebSitePage(WebDriver driver) {
+    public WebSiteMainPage(WebDriver driver) {
         super(driver);
         shortWait.until(ExpectedConditions.visibilityOfElementLocated(CART));
     }

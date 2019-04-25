@@ -2,20 +2,20 @@ package ru.stqa.training.selenium.tests.admin;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.stqa.training.selenium.peges.LoginPage;
-import ru.stqa.training.selenium.peges.MainAdminPage;
+import ru.stqa.training.selenium.peges.admin.AdminLoginPage;
+import ru.stqa.training.selenium.peges.admin.AdminMainPage;
 import ru.stqa.training.selenium.peges.Navigation;
 import ru.stqa.training.selenium.tests.TestBase;
 
 public class LeftMenuTest extends TestBase {
 
-    private static LoginPage loginPage;
+    private static AdminLoginPage loginPage;
     private static Navigation navigation;
-    private static MainAdminPage mainPage;
+    private static AdminMainPage mainPage;
     
     @Before
     public void openPageMethod(){
-        loginPage = new LoginPage(driver);
+        loginPage = new AdminLoginPage(driver);
         navigation = new Navigation(driver);
         navigation.goToAdminAuatorizationPage();
         mainPage = loginPage.login("admin", "admin");

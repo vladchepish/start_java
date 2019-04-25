@@ -3,10 +3,10 @@ package ru.stqa.training.selenium.tests.front;
 import org.junit.Before;
 import org.junit.Test;
 import ru.stqa.training.selenium.objects.User;
-import ru.stqa.training.selenium.peges.MainWebSitePage;
+import ru.stqa.training.selenium.peges.front.WebSiteMainPage;
 import ru.stqa.training.selenium.peges.Navigation;
-import ru.stqa.training.selenium.peges.WebSiteHomePage;
-import ru.stqa.training.selenium.peges.WebSiteRegistrationPage;
+import ru.stqa.training.selenium.peges.front.WebSiteHomePage;
+import ru.stqa.training.selenium.peges.front.WebSiteRegistrationPage;
 import ru.stqa.training.selenium.tests.TestBase;
 
 import static ru.stqa.training.selenium.Utils.DataGenerator.*;
@@ -14,7 +14,7 @@ import static ru.stqa.training.selenium.Utils.DataGenerator.*;
 public class RegistrationTest extends TestBase {
 
     private static Navigation navigation;
-    private static MainWebSitePage mainWebSitePage;
+    private static WebSiteMainPage mainWebSitePage;
     private static WebSiteRegistrationPage registrationPage;
     private static WebSiteHomePage homePage;
 

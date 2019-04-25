@@ -1,6 +1,7 @@
 package ru.stqa.training.selenium.peges;
 
 import org.openqa.selenium.WebDriver;
+import ru.stqa.training.selenium.peges.front.WebSiteMainPage;
 
 
 public class Navigation extends BasePage {
@@ -13,8 +14,8 @@ public class Navigation extends BasePage {
         driver.get("http://localhost/litecart/admin/");
     }
 
-    public MainWebSitePage goToWebSiteMainPage(){
+    public WebSiteMainPage goToWebSiteMainPage(){
         driver.get("http://localhost/litecart/");
-        return new MainWebSitePage(driver);
+        return new WebSiteMainPage(driver);
     }
 }

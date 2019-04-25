@@ -1,14 +1,15 @@
-package ru.stqa.training.selenium.peges;
+package ru.stqa.training.selenium.peges.admin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.stqa.training.selenium.peges.BasePage;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class AdminEditCountryPage extends BasePage{
+public class AdminEditCountryPage extends BasePage {
 
     public static final By MAIN_FORM = By.xpath("//form[contains(@enctype, 'multipart')]");
     public static final By ZONES_TABLE = By.cssSelector("table#table-zones");

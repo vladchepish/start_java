@@ -1,8 +1,9 @@
-package ru.stqa.training.selenium.peges;
+package ru.stqa.training.selenium.peges.front;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import ru.stqa.training.selenium.peges.BasePage;
 
 public class WebSiteHomePage extends BasePage {
 
