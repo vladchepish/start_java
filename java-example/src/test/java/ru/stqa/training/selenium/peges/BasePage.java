@@ -59,6 +59,11 @@ public class BasePage {
         getElement(By.xpath("//li[text()='" + value + "']")).click();
     }
 
+    protected void findAndSelectOptionFromSelect(By by, String value){
+        clickByElement(by);
+        getElement(by).findElement(By.xpath(".//option[text()='" + value + "']")).click();
+    }
+
     protected void clickByElement(By by){
         getElement(by).click();
     }
@@ -99,6 +104,10 @@ public class BasePage {
         if (file != null) {
             getElement(by).sendKeys(file.getAbsolutePath());
         }
+    }
+
+    public void returnOnPreviesPage(){
+        driver.navigate().back();
     }
 
 }
