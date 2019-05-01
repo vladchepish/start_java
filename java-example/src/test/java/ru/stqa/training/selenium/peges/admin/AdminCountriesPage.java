@@ -70,4 +70,9 @@ public class AdminCountriesPage extends BasePage {
         getElement(By.xpath("//td//a[text()='" + name + "']")).click();
         return new AdminEditCountryPage(driver);
     }
+
+    public AdminEditCountryPage openFirstCountry() {
+        getElement(LINE_IN_COUNTRY_TABLE).findElement(By.xpath("//td[5]//a")).click();
+        return new AdminEditCountryPage(driver);
+    }
 }
