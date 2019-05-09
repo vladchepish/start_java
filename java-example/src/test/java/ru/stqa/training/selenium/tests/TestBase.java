@@ -1,10 +1,9 @@
 package ru.stqa.training.selenium.tests;
 
+import com.google.common.io.Files;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -35,6 +34,14 @@ public class TestBase {
         @Override
         public void onException(Throwable throwable, WebDriver driver) {
             System.out.println(throwable);
+            File tempFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File screen = new File("screen.png");
+            try {
+                Files.copy(tempFile, screen);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(screen);
         }
     }
 
