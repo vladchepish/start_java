@@ -2,13 +2,21 @@ package ru.stqa.training.selenium.peges.admin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.stqa.training.selenium.peges.BasePage;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class AdminCatalogPage extends BasePage {
 
     private static final By ADD_NEW_PRODUCT_BTN = By.cssSelector("a.button[href*='product']");
     private static final By ROW_IN_CATALOG_TABLE = By.cssSelector("tr.row");
+    private static final By PRODUCT_LINKS = By.cssSelector("table.dataTable td:nth-child(3) a[href*='category_id=1&product_id']");
 
     public AdminCatalogPage(WebDriver driver) {
         super(driver);
@@ -23,5 +31,29 @@ public class AdminCatalogPage extends BasePage {
     public AdminAddNewProductPage clickAddNewProductBtn() {
         clickByElement(ADD_NEW_PRODUCT_BTN);
         return new AdminAddNewProductPage(driver);
+    }
+
+    public AdminCatalogPage openCategory(String categoryId) {
+        clickByElement(By.xpath("//td[3]/a[contains(@href, 'category_id=" + categoryId + "')]"));
+        return this;
+    }
+
+    public AdminCatalogPage openAllProductInCategoryAbdCheckLog(String categoryID) {
+        List<WebElement> productsList = getElements(
+                By.cssSelector("table.dataTable td:nth-child(3) a[href*='category_id=" + categoryID + "&product_id']"));
+        assertTrue("Количество товаров в категории должно быть больше нуля", productsList.size() > 0);
+        List<String> productsIdList = new ArrayList<>();
+        for (WebElement product : productsList){
+            String id = product.getAttribute("href");
+            productsIdList.add(id);
+        }
+        for (int i = 0; i <productsList.size(); i++){
+            clickByElement(By.cssSelector("a[href*='" + productsIdList.get(i) + "']"));
+            List<LogEntry> logList = driver.manage().logs().get("browser").getAll();
+            assertTrue("Количество сообщений в консоле браузера должно быть равно нулю",
+                    logList.size() == 0);
+            returnOnPreviesPage();
+        }
+        return this;
     }
 }

@@ -18,4 +18,8 @@ public class Navigation extends BasePage {
         driver.get("http://localhost/litecart/");
         return new WebSiteMainPage(driver);
     }
+
+    public void openPageByUrl(String url) {
+        driver.get(url);
+    }
 }
